@@ -1,22 +1,71 @@
 <!DOCTYPE html>
 <html>
     <head lang="en">
-        <title>Emma's Homepage</title>
+        <title>Emma's House</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.png">
     </head>
-    <body style="background-color:powderblue;">
-        <h1 style="font-family:Brush Script MT; font-size: 80px; text-align:center;">Plain Heading</h1>
-        <p style="color:white; font-family:Courier New; font-size: 35px; text-align:center;" title="Plain Tooltip?!">Plain Paragraph!</p>
-        <br>
-         <!--- <img src="" alt="" width="" height=""> --->
-         <!--- <a href="https://www.w3schools.com">This is a link</a> --->
-
-         <!--
-            Your page should have at least:
-                - A title (<title> inside <head>).
-                - A heading (<h1>).
-                - At least 3 sections of content.
-                - At least two links to other pages/sites: One local (linking to another local html file using a relative link) the other a link to the web (e.g. wikipedia or something).
-         -->
+    <body style="background-image: url('images/bg1.png');">
+        
+        <!--
+        Your page should have at least:
+            - A heading (<h1>).
+            - At least 3 sections of content.
+            - At least two links to other pages/sites: One local (linking to another local html file using a relative link) the other a link to the web (e.g. wikipedia or something).
+        -->
+        <!--- <a href="https://www.w3schools.com">This is a link</a> --->
+        <!--- style="padding: 0px; border: 0px;""-->
+        
+        <table style="margin-left: auto; margin-right: auto; padding: 0px; box-shadow: 0px 0px 30px 10px white; border-spacing: 0px;">
+            <tr> <!-- Row 1 -->
+                <td colspan="4" style="padding: 0px; background-color: lightgrey;">
+                    <img src="images/header.jpg" alt="Header" style="width:800px; height:100px; padding:0px;"/>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;"> <!-- Row 2 -->
+                <td rowspan="3" style="width:75px; padding: 0px; background-color: brown;">
+                    <img src="images/sidepic1.jpg" alt="Header" style="width:75px; height:400px;"/>
+                </td>
+                <td rowspan="3" style="width:155px; padding: 0px; background-color: purple;">
+                    <ul style="list-style-type:'⊹ ';">
+                        <li>home</li>
+                        <li>about</li>
+                        <li>favs</li>
+                        <li><a href="https://www.xml.com/pub/a/w3j/s1.people.html">tables?</a></li>
+                    </ul>
                 
+                </td>
+                <td rowspan="3" style="padding: 0px; margin: 0px; border:0px; background-color: aqua;">
+                    <table width="100%" height="100%" style="padding: 0px; margin: 0px; border:0px; border-spacing: 0px; ">
+                        <tr style="vertical-align: top;">
+                            <td  colspan="2" style=" padding: 0px; margin: 0px; border:0px; background-color: pink;">
+                                <p> welcome to my <a href="https://motherfuckingwebsite.com/"> shit website</a> </p>
+                            </td>
+                        </tr>
+                        <tr style="vertical-align: top;">
+                            <td style="padding: 0px; margin: 0px; border:0px; background-color: lightgrey;">
+                                hi guys
+                            </td>
+                            <td style="padding: 0px; margin: 0px; border:0px; background-color: orange;">
+                                hi guys
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="width:110px; height: 110px;padding:0px; background-color: lightgray;">
+                    <img style="width:100%;" src="images/icon1.jpg">
+                </td>
+            </tr>
+            <tr style="vertical-align: top;"> <!-- Row 3 -->
+                <td rowspan="2" style="background-color: grey">
+                    <p style="margin: 5px;"> some of my things:</p>
+                    <ul style="list-style-type:'⊹ ';">
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
     </body>
 </html>
