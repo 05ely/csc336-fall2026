@@ -7,57 +7,62 @@
     <body style="background-image: url('images/bg1.png');">
         
         <!--
-        Your page should have at least:
-            - A heading (<h1>).
-            - At least 3 sections of content.
-            - At least two links to other pages/sites: One local (linking to another local html file using a relative link) the other a link to the web (e.g. wikipedia or something).
+            before you say Yuck! This looks a Mess!
+            Just know i hate in-line css. i don't know
+            how to make it cuter. i'm sorry. it'll be
+            fixed next assignment. or something.
+
+            tables are used instead of divs partially
+            for above reason, but also partially for
+            nostalgia purposes
         -->
-        <!--- <a href="https://www.w3schools.com">This is a link</a> --->
-        <!--- style="padding: 0px; border: 0px;""-->
-        
-        <table style="margin-left: auto; margin-right: auto; padding: 0px; box-shadow: 0px 0px 30px 10px white; border-spacing: 0px;">
+
+        <h1 style="text-align:center; margin-top:30; position:relative; top:50px; text-shadow: 0 0 7px white, 0 0 3px white; font-size:40px;">emma's house</h1>
+
+        <table style="margin-left:auto; margin-right:auto; padding:0px; border-spacing:0px; box-shadow: 0px 0px 30px 10px white; background-color:white;">
             <tr> <!-- Row 1 -->
-                <td colspan="4" style="padding: 0px; background-color: lightgrey;">
-                    <img src="images/header.jpg" alt="Header" style="width:800px; height:100px; padding:0px;"/>
+                <td colspan="4" style="padding: 0px;">
+                    <img src="images/header.jpg" alt="Header" style="width:800px; height:100px; border-radius:6px"/>
                 </td>
             </tr>
-            <tr style="vertical-align: top;"> <!-- Row 2 -->
-                <td rowspan="3" style="width:75px; padding: 0px; background-color: brown;">
-                    <img src="images/sidepic1.jpg" alt="Header" style="width:75px; height:400px;"/>
+            <tr style="vertical-align:top;"> <!-- Row 2 -->
+                <td rowspan="3" style="width:75px; padding:0px;">
+                    <img src="images/sidepic1.jpg" alt="Side Picture" style="width:75px; height:400px;"/>
                 </td>
-                <td rowspan="3" style="width:155px; padding: 0px; background-color: purple;">
-                    <ul style="list-style-type:'⊹ ';">
+                <td rowspan="3" style="width:100px; padding:6px; border-right: 3px dotted grey;">
+                    <p style="margin-bottom:0px;">navbar</p>
+                    <ul style="margin-top:0px; list-style-type:'⊹ ';">
                         <li>home</li>
                         <li>about</li>
                         <li>favs</li>
-                        <li><a href="https://www.xml.com/pub/a/w3j/s1.people.html">tables?</a></li>
+                        <li><a href="https://www.xml.com/pub/a/w3j/s1.people.html" target="_blank">tables?</a></li>
                     </ul>
                 
                 </td>
-                <td rowspan="3" style="padding: 0px; margin: 0px; border:0px; background-color: aqua;">
-                    <table width="100%" height="100%" style="padding: 0px; margin: 0px; border:0px; border-spacing: 0px; ">
-                        <tr style="vertical-align: top;">
-                            <td  colspan="2" style=" padding: 0px; margin: 0px; border:0px; background-color: pink;">
-                                <p> welcome to my <a href="https://motherfuckingwebsite.com/"> shit website</a> </p>
+                <td rowspan="3" style="padding:0px; margin:0px; border:0px; background-image:url('images/bg18.jpg'); background-size:90px; border-right: 3px dotted grey; text-align:center;">
+                    <table style="width:100%; height:100%; padding:0px; margin:0px; border-spacing:5px;">
+                        <tr style="vertical-align:top;">
+                            <td  colspan="2" style="padding:0px; margin:0px; border:0px; border-radius:6px; background-color:gainsboro;">
+                                <p> welcome to my <a href="https://motherfuckingwebsite.com/" target="_blank"> shit website</a> </p>
                             </td>
                         </tr>
-                        <tr style="vertical-align: top;">
-                            <td style="padding: 0px; margin: 0px; border:0px; background-color: lightgrey;">
-                                hi guys
+                        <tr style="vertical-align:top;">
+                            <td style="padding:0px; margin:0px; border:0px; border-radius:6px; background-color: gainsboro;">
+                                <a href="mailto:ee6387a@american.edu"> email me </a>
                             </td>
-                            <td style="padding: 0px; margin: 0px; border:0px; background-color: orange;">
+                            <td style="padding:0px; margin:0px; border:0px; border-radius:6px; background-color: gainsboro;">
                                 hi guys
                             </td>
                         </tr>
                     </table>
                 </td>
-                <td style="width:110px; height: 110px;padding:0px; background-color: lightgray;">
+                <td style="width:110px; height:110px; padding:0px;">
                     <img style="width:100%;" src="images/icon1.jpg">
                 </td>
             </tr>
-            <tr style="vertical-align: top;"> <!-- Row 3 -->
-                <td rowspan="2" style="background-color: grey">
-                    <p style="margin: 5px;"> some of my things:</p>
+            <tr style="vertical-align:top;"> <!-- Row 3 -->
+                <td rowspan="2">
+                    <p style="margin:5px;"> some of my things:</p>
                     <ul style="list-style-type:'⊹ ';">
                         <li>Coffee</li>
                         <li>Tea</li>
@@ -66,6 +71,6 @@
                 </td>
             </tr>
         </table>
-
+        <img src="images/border.png" style="width:800px; height:90px; display: block; margin: auto; position:relative; bottom: 15px;">
     </body>
 </html>
