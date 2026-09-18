@@ -1,6 +1,7 @@
 * {
     padding: 0px;
     margin: 0px;
+    font-family: monospace;
 }
 
 body {
@@ -77,6 +78,7 @@ body {
     border-radius:6px;
     background-color:gainsboro;
     vertical-align: middle;
+    padding: 10px;
 }
 
 #rightside-col{
@@ -89,6 +91,38 @@ body {
     width:100%;
 }
 
+ul{
+    padding:20px;
+    padding-top: 0;
+}
+
+.ul-title{
+    padding:10px;
+    padding-bottom: 5;
+}
+
+li:hover{
+    color: yellow;
+}
+
 .align-top{
     vertical-align:top;
+}
+
+.felx-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.flex-div{
+    background-image: url('images/deco/bg1.png');
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80px;
+}
+
+p{
+    font-size: 15px;
 }
