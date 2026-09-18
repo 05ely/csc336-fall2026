@@ -16,7 +16,7 @@ body {
     text-shadow: 0 0 7px white, 0 0 3px white;
 }
 
-#header-image{
+#header-img{
     width:800px;
     height:100px;
     border-radius:6px
@@ -46,8 +46,47 @@ body {
 
 #leftside-txt{
     width:100px;
-    pading-top: 10px;
+    padding-top: 10px;
     border-right: 3px dotted grey;
+}
+
+#middle-col{
+    border:0px;
+    background-image:url('images/deco/bg2.jpg');
+    background-size:90px;
+    border-right: 3px dotted grey;
+    text-align:center;
+}
+
+#middle-table{
+    width:100%;
+    height:100%;
+    border-spacing:5px;
+}
+
+#middle-img{
+    width:85px;
+    height:85px;
+    border-radius: 7px;
+    margin: 20px 10px;
+    vertical-align: middle;
+}
+
+.middle-box{
+    border:0px;
+    border-radius:6px;
+    background-color:gainsboro;
+    vertical-align: middle;
+}
+
+#rightside-col{
+    width:110px;
+    height:110px;
+    padding:0px;
+}
+
+#rightside-img{
+    width:100%;
 }
 
 .align-top{
