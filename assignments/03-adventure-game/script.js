@@ -1,11 +1,12 @@
 let roomRootDiv = document.querySelector("#roomRoot");
 let gameChoicesDiv = document.querySelector("#gameChoices");
-let hasKey = false;
+let invRootDiv = document.querySelector("#invRoot");
+let inventory = [];
 
 let rooms = {
     beginning: {
         name: "Start of the Game",
-        description: "Welcome to the start of the game! You find yourself lost in the forest. Nearby, a small stream babbles, and the taste the sea salt clings to the air. You notice a few of the surrounding trees harbor deep gashes. You cannot shake the feeling that something is watching you.",
+        description: "Welcome to the start of the game! You find yourself lost in the forest. Nearby, a small stream babbles, and the taste the sea salt clings to the air. You notice a few of the surrounding trees harbor deep gashes.<br>You cannot shake the feeling that something is watching you.",
         linkedRooms: [
             { label: "Follow the smell of sea salt", destination: "beach" },
             { label: "Follow the noise of the stream", destination: "stream" },
@@ -14,7 +15,7 @@ let rooms = {
     },
     forest:{
         name: "The Forest",
-        description: "You head back into the forest, uncertain. Nearby, a small stream babbles, and the taste the sea salt clings to the air. A few of the surrounding trees harbor deep gashes. Something is watching you.",
+        description: "You head back into the forest, uncertain. Nearby, a small stream babbles, and the taste the sea salt clings to the air. A few of the surrounding trees harbor deep gashes.<br>Something is watching you.",
         linkedRooms: [
             { label: "Follow the smell of sea salt", destination: "beach" },
             { label: "Follow the noise of the stream", destination: "stream" },
@@ -23,23 +24,23 @@ let rooms = {
     },
     stream:{
         name: "The Stream",
-        description: "Would you like to go upstream or downstream.",
+        description: "You follow your ears, happening upon a small, but steady, stream. You can't remember if a stream is meant to be here, but yet here exists one regardless. You notice the forest is eerily quiet, aside from the tumbling water in front of you.<br>You decide to...",
         linkedRooms: [
             { label: "Go upstream", destination: "waterfall" },
             { label: "Go downstream", destination: "beach" },
-            { label: "Back to the forest", destination: "forest" }
+            { label: "Head back to the forest", destination: "forest" }
         ]
     },
     waterfall:{
         name: "The Waterfall",
-        description: "TBD",
+        description: "As you walk upstream, the deafening sound of a waterfall encompasses you. You wonder if you can get to higher ground, but the surrounding area is too slick to climb. The mud deters you from going any further.",
         linkedRooms: [
             { label: "Go back to where you came", destination: "stream" }
         ]
     },
     beach:{
         name: "The Beach",
-        description: "TBD",
+        description: "The salty breesze carries you towards the beach. Though you wish you could stop to soak in the sun, you have more pressing matters to attend to. Like being lost.",
         linkedRooms: [
             { label: "Walk towards the water", destination: "shore" },
             { label: "Walk towards the headland", destination: "rocks" },
@@ -48,31 +49,31 @@ let rooms = {
     },
     shore:{
         name: "The Shore",
-        description: "TBD",
+        description: "You step into the water, but don't see any fish to catch. It's hard to focus. <br> When do fishes go to the eye doctor? When they have trouble sea-ing. <br><br> haha <br><br> You might be going crazy.",
         linkedRooms: [
-            { label: "Head back towards land", destination: "beach" }
+            { label: "That was a dumb joke. I want to leave.", destination: "beach" }
         ]
     },
     rocks:{
         name: "The Rocks",
-        description: "TBD",
+        description: "You walk along the large rocky outcrop, noticing the entrance to a cave in it's side. You wonder if there could be any useful items inside.",
         linkedRooms: [
-            { label: "Enter the cave", destination: "cave" },
-            { label: "Head back to the open sand", destination: "beach" },
+            { label: "Bears don't live on the beach. I'll be fine.", destination: "cave" },
+            { label: "Are you serious? I'm not getting mauled today.", destination: "beach" },
         ]
     },
     cave:{
         name: "The Cave",
-        description: "Inside, you find a key.",
+        description: "Wow! Inside, you find a key.",
         linkedRooms: [
-            { label: "Happily leave the cave", destination: "rocks" }
+            { label: "Happily leave the cave!", destination: "rocks" }
         ]
     },
     path:{
         name: "Following the Path",
-        description: "You notice a wearied castle in the distance. You think you see a figure flash in the window, but the builing looks too wilted to be housing any guests. Do you approach, or turn back?",
+        description: "You notice a wearied castle in the distance. You think you see a figure flash in the window, but the builing looks too wilted to be housing any guests.<br>Do you approach, or turn back?",
         linkedRooms: [
-            { label: "Approach the doors", destination: "castle" },
+            { label: "Approach the castle", destination: "castle" },
             { label: "Are you dumb? I'm not entering a haunted castle.", destination: "forest" },
         ]
     },
@@ -86,14 +87,14 @@ let rooms = {
     },
     door:{
         name: "Castle Door",
-        description: "The Door does not unlock. You need a Key. \n The hairs on you neck raise. You are being watched.",
+        description: "The Door does not unlock. You need a Key.<br>The hairs on you neck raise. You are being watched.",
         linkedRooms: [
-            { label: "I need to find shelter.", destination: "path" }
+            { label: "Turn back.", destination: "path" }
         ]
     },
     win:{
         name: "Safety",
-        description: "You made it into the castle!",
+        description: "You made it safely into the castle, and live to see another day! Congrats!",
         linkedRooms: [
             { label: "Play again.", destination: "beginning" }
         ]
@@ -109,19 +110,40 @@ function goToRoom(roomKey) {
     }
 
     if (roomKey === "beginning") {
-        hasKey = false;
+        inventory = [];
     }
 
-    if (roomKey === "cave") {
-        hasKey = true;
+    if (roomKey === "cave" && !inventory.includes("Key")) {
+        inventory.push("Key");
     }
 
-    if (roomKey === "door" && hasKey) {
+    if (roomKey === "door" && inventory.includes("Key")) {
         roomKey = "win";
     }
 
     currentRoom = rooms[roomKey];
     visualizeRoom(currentRoom);
+}
+
+function visualizeInventory() {
+    invRootDiv.innerHTML = "";
+
+    let invTitle = document.createElement("h3");
+    invTitle.innerHTML = "Inventory";
+    invRootDiv.append(invTitle);
+
+    if (inventory.length === 0) {
+        let empty = document.createElement("hp");
+        empty.innerHTML = "Nothing";
+        invRootDiv.append(empty);
+        return;
+    }
+
+    for (let i = 0; i < inventory.length; i++) {
+        let item = document.createElement("p");
+        item.innerHTML = inventory[i];
+        invRootDiv.append(item);
+    }
 }
 
 function visualizeRoom(room) {
@@ -145,6 +167,8 @@ function visualizeRoom(room) {
         });
         gameChoicesDiv.append(navButton);
     }
+
+    visualizeInventory();
 }
 
 visualizeRoom(currentRoom);
