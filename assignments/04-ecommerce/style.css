@@ -1,0 +1,75 @@
+*{
+    color: #353B3C;
+    font-family: cursive;;
+}
+
+body{
+    background-image:url('imgs/bg.jpg');;
+}
+
+h1{
+    padding: 10px;
+    border: 3px solid #A2999E;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#controls {
+    margin-bottom: 20px;
+    display: flex;
+    gap:15px;
+}
+
+#storeContainer {
+    display: flex;
+}
+
+#productList {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
+#cartBox {
+    width: 30%;
+    border: 3px solid #A2999E;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#cartTotal{
+    border-top: 3px dashed #A2999E;
+    padding-top: 15px;
+}
+
+.card {
+    width: 200px;
+    border: 3px solid #A2999E;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+}
+
+.card button{
+    margin-left: 20px;
+}
+
+.card p{
+    border-top: 3px dashed #A2999E;
+    padding-top: 15px;
+}
+
+.selected {
+    border-color: #846A6A;
+    background-color: #EEF0F2;
+}
+
+/* color palette from coolors */
