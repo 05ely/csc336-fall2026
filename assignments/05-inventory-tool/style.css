@@ -1,0 +1,165 @@
+*{
+    color: #353B3C;
+    font-family: cursive;
+}
+
+body{
+    background-image:url('imgs/bg.jpg');;
+}
+
+h1{
+    padding: 10px;
+    border: 3px solid #A2999E;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#storeButtons {
+    display: flex;
+    gap: 15px;
+    margin: 5px 5px 10px 5px;
+}
+
+#storeMsg {
+    min-height: 1em;
+    margin: 0px 5px 15px 5px;
+}
+
+#storeMsg.success {
+    color: #3E5641;
+}
+
+#addProductPopup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#addProductPopup.open {
+    display: flex;
+}
+
+#addProductBox {
+    position: relative;
+    box-sizing: border-box;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border: 3px solid #A2999E;
+    padding: 0px 10px;
+    margin: 5px 5px 20px 5px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#closeButton {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+#productDataForm {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+}
+
+#productDataForm .field {
+    display: flex;
+    flex-direction: column;
+}
+
+#productDataForm .field.hidden {
+    display: none;
+}
+
+#formButtons {
+    display: flex;
+    gap: 15px;
+}
+
+#formMsg {
+    min-height: 1em;
+}
+
+#formMsg.error {
+    color: #a24936;
+}
+
+#formMsg.success {
+    color: #3E5641;
+}
+
+#controls {
+    margin-bottom: 20px;
+    display: flex;
+    gap:15px;
+}
+
+#storeContainer {
+    display: flex;
+}
+
+#productList {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
+#cartBox {
+    width: 30%;
+    border: 3px solid #A2999E;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#cartTotal{
+    border-top: 3px dashed #A2999E;
+    padding-top: 15px;
+}
+
+.card {
+    width: 200px;
+    border: 3px solid #A2999E;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+}
+
+.card button{
+    margin-left: 20px;
+}
+
+.card p{
+    border-top: 3px dashed #A2999E;
+    padding-top: 15px;
+}
+
+.selected {
+    border-color: #846A6A;
+    background-color: #EEF0F2;
+}
+
+/* color palette from coolors */
