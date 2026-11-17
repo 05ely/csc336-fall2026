@@ -7,6 +7,12 @@ const app = express();
 // send files from public folder to visitors
 app.use(express.static("public"));
 
+// return current server time
+app.get("/time", (req, res) => {
+  // get current date + time from new Date, make it into string, and send it to the browser using res.send
+  res.send(new Date().toString());
+});
+
 // use renders assigned port, or port 3000 when running locally
 const port = process.env.PORT || 3000;
 
